@@ -6,4 +6,10 @@
 
 % Your implementation please...
 
+range(1..4).
+sudoku(X,Y,N) :- initial(X,Y,N).
+{sudoku(X,Y,N) : range(N)} = 1 :- range(X), range(Y).
+:- sudoku(X1,Y,N), sudoku(X2,Y,N), X1 != X2.
+:- sudoku(X,Y1,N), sudoku(X,Y2,N), Y1 != Y2.
+
 #show sudoku/3.
